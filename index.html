@@ -26,9 +26,10 @@
     </main>
     <footer>改进版：<a href="https://github.com/akira-cn/bullshit-generator-js">bullshit-generator-js</a> 作者：月影</footer>
 </body>
+<script src="https://akira-cn.github.io/bullshit-generator-js/dist/index.js"></script>
 <script type="module">
-    import {generate} from './lib/generator.js';
-    import { createRandomPicker } from './lib/random.js';
+
+    const { generate, createRandomPicker, loadCorpus } = bullshitGenerator;
 
     const options = document.querySelector('.options');
     const config = { min: 2000, max: 5000 };
