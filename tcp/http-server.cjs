@@ -1,16 +1,16 @@
 // http-simple.js
-import http from 'http'
-import url from 'url'
-import path  from 'path'
-import fs from 'fs'
-// const http = require('http');
-// const url = require('url');
+const http = require('http');
+const url = require('url');
+const path = require('path');
+const fs = require('fs');
+
 
 const server  = http.createServer((req,res)=>{
     // 绝对路径
     // 
-    console.log(req.url)
-    let filePath = path.resolve(path.dirname,path.join('www',url.fileURLToPath(`file://${req.url}`)));
+    // console.log(__dirname)
+    // console.log(url.fileURLToPath(`file:/${req.url}`))
+    let filePath = path.resolve(__dirname,path.join('www',url.fileURLToPath(`file:/${req.url}`)));
     
     if(fs.existsSync(filePath)){
         const stats = fs.statSync(filePath);
